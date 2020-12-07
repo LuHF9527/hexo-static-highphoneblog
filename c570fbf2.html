@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JAVA基础-String、StringBuffer、StringBuilder | highPhone啊</title><meta name="keywords" content="String,Java"><meta name="author" content="highPhone啊"><meta name="copyright" content="highPhone啊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="爪哇字符串相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA基础-String、StringBuffer、StringBuilder">
+<meta property="og:url" content="https://highphone.xyz/c570fbf2.html">
+<meta property="og:site_name" content="highPhone啊">
+<meta property="og:description" content="爪哇字符串相关">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://highphone.xyz/images/javaBasic.jpg">
+<meta property="article:published_time" content="2020-11-16T16:03:42.000Z">
+<meta property="article:modified_time" content="2020-11-24T08:25:03.676Z">
+<meta property="article:author" content="highPhone啊">
+<meta property="article:tag" content="String">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://highphone.xyz/images/javaBasic.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://highphone.xyz/c570fbf2"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-11-24 16:25:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/../images/javaBasic.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">highPhone啊</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">JAVA基础-String、StringBuffer、StringBuilder</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-16T16:03:42.000Z" title="发表于 2020-11-17 00:03:42">2020-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-24T08:25:03.676Z" title="更新于 2020-11-24 16:25:03">2020-11-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote><p>折腾了这么久，终于把这个博客搭起来，作为第一篇文章，就挑了基础的爪哇字符串来写了。博客搭建过程多得土川大佬的指导，非常感谢！附上大佬的博客地址：<a target="_blank" rel="noopener" href="https://htchz.cc/" title="[https:&#x2F;&#x2F;htchz.cc]" target>土川的自留地</a></p>
+</blockquote>
+
+
+<p><strong>String</strong><br>以下是String在jdk源码中的声明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public final class String implements java.io.Serializable, Comparable&lt;String&gt;, CharSequence&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>String在jdk源码中被声明为,是一个不可变类，String对象一旦被创建，其值将不能被改变，但String对象的引用是可变的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    String str &#x3D; &quot;abc&quot;;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">    System.out.println(System.identityHashCode(str));</span><br><span class="line">    str &#x3D; &quot;def&quot;;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">    System.out.println(System.identityHashCode(str));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/2020-11-19-23-28-24.png"></p>
+<p>以上代码中，创建了一个名为str的String对象并赋值为”abc”，后面经过str = “def”后，虽然输出str的值是变化了，但只是在字符串常量池创建了一个新的”def”，并把str的引用指向了它，并不是改变了原来字符串对象中”abc”的值，我们可以通过打印str=”def”前后的内存地址看出来。</p>
+<p>虽然String是不可变的，但比较两个String对象是否相等不建议使用==，而是使用String重写继承自Object的eqauls()。</p>
+<p>1.对于String常量s1 和 s2来说，其实其引用指向的都是字符串常量池中同一个字符串，所以使用==来比较这两个字符串，也是返回true。</p>
+<p>2.对于s1 和 s3来说，s1是先去字符串常量中寻找是否有”abc”这个字符串，如果有，就把s1的引用指向它，如果没有，就生成一个”abc”字符串，放入字符串常量池中，并把s1的引用指向它；而对于String s3 = new String(“abc”)，如果常量池已有了”abc”，则只会在堆中生成一个新的值为”abc”的String对象，并把其引用给s3，如果常量池没有”abc”，这行代码则会生成两个值为”abc”的String对象，一个放入常量池中，一个在堆中，并把堆中的”abc”的引用给s3。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">   String s1 &#x3D; &quot;abc&quot;;</span><br><span class="line">   String s2 &#x3D; &quot;abc&quot;;</span><br><span class="line">   String s3 &#x3D; new String(&quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">   System.out.println(s1 &#x3D;&#x3D; s2);&#x2F;&#x2F;true</span><br><span class="line">   System.out.println(s1 &#x3D;&#x3D; s3);&#x2F;&#x2F;false</span><br><span class="line">   System.out.println(s1.equals(s3));&#x2F;&#x2F;true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>jdk1.8中String的eqauls()重写如下,使用eqauls来比较可以准确地判断两个String对象是否相等:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Compares this string to the specified object.  The result is &#123;@code</span><br><span class="line"> * true&#125; if and only if the argument is not &#123;@code null&#125; and is a &#123;@code</span><br><span class="line"> * String&#125; object that represents the same sequence of characters as this</span><br><span class="line"> * object.</span><br><span class="line"> *</span><br><span class="line"> * @param  anObject</span><br><span class="line"> *         The object to compare this &#123;@code String&#125; against</span><br><span class="line"> *</span><br><span class="line"> * @return  &#123;@code true&#125; if the given object represents a &#123;@code String&#125;</span><br><span class="line"> *          equivalent to this string, &#123;@code false&#125; otherwise</span><br><span class="line"> *</span><br><span class="line"> * @see  #compareTo(String)</span><br><span class="line"> * @see  #equalsIgnoreCase(String)</span><br><span class="line"> *&#x2F;</span><br><span class="line">public boolean equals(Object anObject) &#123;</span><br><span class="line">    if (this &#x3D;&#x3D; anObject) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if (anObject instanceof String) &#123;</span><br><span class="line">        String anotherString &#x3D; (String)anObject;</span><br><span class="line">        int n &#x3D; value.length;</span><br><span class="line">        if (n &#x3D;&#x3D; anotherString.value.length) &#123;</span><br><span class="line">            char v1[] &#x3D; value;</span><br><span class="line">            char v2[] &#x3D; anotherString.value;</span><br><span class="line">            int i &#x3D; 0;</span><br><span class="line">            while (n-- !&#x3D; 0) &#123;</span><br><span class="line">                if (v1[i] !&#x3D; v2[i])</span><br><span class="line">                    return false;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>StringBuffer</strong><br>StringBuffer一个可变类，当对象被创建后可以多次进行修改并且不会产生新的未使用对象，其初始化只能通过构造函数方式(new StringBuffer(“abc”))。同时，由于其提供的方法都进行了加锁，所以StringBuffer是线程安全的。<br>JDK源码中StringBuffer部分方法如下：<br><img src="../images/2020-11-22-20-05-00.png"></p>
+<p><strong>StringBuilder</strong><br>JDK1.5之后才有，StringBuilder与StringBuffer类似，提供与StringBuffer相同的API，但不保证同步。在可能的情况下，建议使用这个类别优先于StringBuffer ，因为它在大多数实现中将更快。</p>
+<p><strong>三者对比</strong><br>执行效率 ： StringBuilder  &gt;  StringBuffer &gt; String</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public class StringTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        runAppend(100000);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void runAppend(int n)</span><br><span class="line">    &#123;</span><br><span class="line">        String str &#x3D; &quot;&quot;;</span><br><span class="line">        Long strTimeStart &#x3D; System.currentTimeMillis();</span><br><span class="line">        for (int i&#x3D; 0; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            str +&#x3D; &quot;&quot; + i;</span><br><span class="line">        &#125;</span><br><span class="line">        Long strTimeEnd &#x3D; System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;append [&quot; + n +&quot;] times String cost time:&quot; + (strTimeEnd-strTimeStart) + &quot;ms&quot;);</span><br><span class="line"></span><br><span class="line">        StringBuffer sb &#x3D; new StringBuffer();</span><br><span class="line">        Long sbTimeStart &#x3D; System.currentTimeMillis();</span><br><span class="line">        for(int i &#x3D; 0; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sb.append(&quot;&quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">        Long sbTimeEnd &#x3D; System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;append [&quot; + n +&quot;] times StringBuffer cost time:&quot; + (sbTimeEnd-sbTimeStart) + &quot;ms&quot;);</span><br><span class="line"></span><br><span class="line">        StringBuilder sd &#x3D; new StringBuilder();</span><br><span class="line">        Long sdTimeStart &#x3D; System.currentTimeMillis();</span><br><span class="line">        for(int i &#x3D; 0; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sd.append(&quot;&quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">        Long sdTimeEnd &#x3D; System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;append [&quot; + n +&quot;] times StringBuilder cost time:&quot; + (sdTimeEnd-sdTimeStart) + &quot;ms&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用以上代码验证三者的执行速度<br>当n = 10 时，三者执行速度看不出差别，String比其他二者慢了1ms<br><img src="../images/2020-11-22-23-44-43.png"></p>
+<p>当n = 1000 时，可以看出String比StringBuffer和StringBuilder慢一些，但StringBuffer比StringBuilder慢了1ms<br><img src="../images/2020-11-22-23-45-18.png"></p>
+<p>当n = 100000 时：<br><img src="../images/2020-11-22-23-46-21.png"></p>
+<p>我们可以把数据规模提高到1000000，因为此时String已经需要花费比较长时间了，我们可以把相关代码注释，只比较StringBuffer和StringBuilder<br><img src="../images/2020-11-22-23-47-17.png"><br>可以看出执行速度 StringBuilder &gt; StringBuffer &gt; String, 且可得出，随着数据规模的增大，这执行速度的差别将越来越大</p>
+<p><strong>总结</strong><br>1.执行效率 StringBuilder &gt; StringBuffer &gt; String,但在数据规模小的时候，其实可以优先使用String<br>2.因为String是不可变的，所以它是线程安全的，而StringBuffer因为有加锁，所以StringBuffer也是线程安全的，所以，在多线程下操作大量数据，应该优先考虑StringBuffer<br>3.因StringBuilder执行效率最高，但是他不是线程安全的，所以比较适合在单线程下操作大量数据。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">highPhone啊</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://highphone.xyz/c570fbf2.html">https://highphone.xyz/c570fbf2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://highphone.xyz" target="_blank">highPhone啊</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/String/">String</a><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/../images/javaBasic.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/d816cff7.html"><img class="prev-cover" src="/../images/example.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Markdown写作入门</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/f7fe0af2.html" title="基本数据类型"><img class="cover" src="/../images/javaBasic.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-25</div><div class="title">基本数据类型</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">highPhone啊</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LuHF9527"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LuHF9527/" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">随缘而习之，不亦乐乎</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/3e83b217.html" title="JVM内存模型"><img src="/../images/javaBasic.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JVM内存模型"/></a><div class="content"><a class="title" href="/3e83b217.html" title="JVM内存模型">JVM内存模型</a><time datetime="2020-12-04T13:47:19.000Z" title="发表于 2020-12-04 21:47:19">2020-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/f7fe0af2.html" title="基本数据类型"><img src="/../images/javaBasic.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基本数据类型"/></a><div class="content"><a class="title" href="/f7fe0af2.html" title="基本数据类型">基本数据类型</a><time datetime="2020-11-25T14:42:41.000Z" title="发表于 2020-11-25 22:42:41">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/d816cff7.html" title="Markdown写作入门"><img src="/../images/example.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown写作入门"/></a><div class="content"><a class="title" href="/d816cff7.html" title="Markdown写作入门">Markdown写作入门</a><time datetime="2020-11-24T08:24:04.000Z" title="发表于 2020-11-24 16:24:04">2020-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/c570fbf2.html" title="JAVA基础-String、StringBuffer、StringBuilder"><img src="/../images/javaBasic.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA基础-String、StringBuffer、StringBuilder"/></a><div class="content"><a class="title" href="/c570fbf2.html" title="JAVA基础-String、StringBuffer、StringBuilder">JAVA基础-String、StringBuffer、StringBuilder</a><time datetime="2020-11-16T16:03:42.000Z" title="发表于 2020-11-17 00:03:42">2020-11-17</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By highPhone啊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
