@@ -1,147 +1,443 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>分类: java基础 | highPhone Space</title><meta name="author" content="highPhone啊"><meta name="copyright" content="highPhone啊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="底层码农的爬坑笔记">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>分类: Java基础 | highPhone Space</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="highPhone Space" type="application/atom+xml">
+  <meta name="description" content="底层码农的爬坑笔记">
 <meta property="og:type" content="website">
 <meta property="og:title" content="highPhone Space">
-<meta property="og:url" content="https://highphone.xyz/categories/java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://highphone.xyz/categories/Java%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="highPhone Space">
 <meta property="og:description" content="底层码农的爬坑笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://highphone.xyz/img/favicon.png">
 <meta property="article:author" content="highPhone啊">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://highphone.xyz/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://highphone.xyz/categories/java%E5%9F%BA%E7%A1%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  ClickShowText: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: true
-};
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="底层码农的爬坑笔记">
+  <meta name="keywords" content="">
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="highPhone Space">
+  <meta name="msapplication-starturl" content="https://highphone.xyz/categories/Java%E5%9F%BA%E7%A1%80/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="highPhone Space">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
+  
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2021-01-31 15:46:56'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+  
+    <link rel="canonical" href="https://highphone.xyz/categories/Java%E5%9F%BA%E7%A1%80/index.html">
+  
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
-        }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="not-index-bg" id="page-header" style="background-image: url(/img/top_img.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">highPhone Space</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="page-site-info"><h1 id="site-title">java基础</h1></div></header><main class="layout" id="content-inner"><div id="category"><div class="article-sort-title">分类 - java基础</div><div class="article-sort"><div class="article-sort-item year">2021</div><div class="article-sort-item"><a class="article-sort-item-img" href="/8cd769c.html" title="JVM内存回收策略"><img src="/../images/cover.jpeg" alt="JVM内存回收策略" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-01-11T11:39:42.000Z" title="发表于 2021-01-11 19:39:42">2021-01-11</time></div><a class="article-sort-item-title" href="/8cd769c.html" title="JVM内存回收策略">JVM内存回收策略</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/9a65291d.html" title="Java堆及虚拟机栈"><img src="/../images/cover.jpeg" alt="Java堆及虚拟机栈" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-01-10T06:10:18.000Z" title="发表于 2021-01-10 14:10:18">2021-01-10</time></div><a class="article-sort-item-title" href="/9a65291d.html" title="Java堆及虚拟机栈">Java堆及虚拟机栈</a></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">highPhone啊</div><div class="author-info__description">底层码农的爬坑笔记</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LuHF9527"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LuHF9527/" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">只有被明日的我们铭记，今天才有意义</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/cff6dd61.html" title="Java内存模型(Java Memory Mode)"><img src="/../images/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java内存模型(Java Memory Mode)"/></a><div class="content"><a class="title" href="/cff6dd61.html" title="Java内存模型(Java Memory Mode)">Java内存模型(Java Memory Mode)</a><time datetime="2021-01-28T16:08:56.000Z" title="发表于 2021-01-29 00:08:56">2021-01-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/f1601c3e.html" title="单例模式"><img src="/../images/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单例模式"/></a><div class="content"><a class="title" href="/f1601c3e.html" title="单例模式">单例模式</a><time datetime="2021-01-26T15:48:35.000Z" title="发表于 2021-01-26 23:48:35">2021-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/87dda92b.html" title="8种基础排序算法"><img src="/../images/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="8种基础排序算法"/></a><div class="content"><a class="title" href="/87dda92b.html" title="8种基础排序算法">8种基础排序算法</a><time datetime="2021-01-16T09:51:10.000Z" title="发表于 2021-01-16 17:51:10">2021-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/8cd769c.html" title="JVM内存回收策略"><img src="/../images/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JVM内存回收策略"/></a><div class="content"><a class="title" href="/8cd769c.html" title="JVM内存回收策略">JVM内存回收策略</a><time datetime="2021-01-11T11:39:42.000Z" title="发表于 2021-01-11 19:39:42">2021-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/9a65291d.html" title="Java堆及虚拟机栈"><img src="/../images/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java堆及虚拟机栈"/></a><div class="content"><a class="title" href="/9a65291d.html" title="Java堆及虚拟机栈">Java堆及虚拟机栈</a><time datetime="2021-01-10T06:10:18.000Z" title="发表于 2021-01-10 14:10:18">2021-01-10</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaWeb/"><span class="card-category-list-name">JavaWeb</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">Java基础</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">java基础</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%BC%AB%E8%B0%88/"><span class="card-category-list-name">漫谈</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="card-category-list-name">设计模式</span><span class="card-category-list-count">1</span></a></li>
-            
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/GC/" style="font-size: 1.1em; color: #999">GC</a> <a href="/tags/JMM/" style="font-size: 1.1em; color: #999">JMM</a> <a href="/tags/Java/" style="font-size: 1.5em; color: #99a9bf">Java</a> <a href="/tags/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 1.1em; color: #999">Lambda表达式</a> <a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/String/" style="font-size: 1.1em; color: #999">String</a> <a href="/tags/jvm/" style="font-size: 1.5em; color: #99a9bf">jvm</a> <a href="/tags/leetcode/" style="font-size: 1.23em; color: #999ea6">leetcode</a> <a href="/tags/mysql/" style="font-size: 1.37em; color: #99a4b2">mysql</a> <a href="/tags/servlet/" style="font-size: 1.1em; color: #999">servlet</a> <a href="/tags/singleton/" style="font-size: 1.1em; color: #999">singleton</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">动态规划</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.23em; color: #999ea6">多线程</a> <a href="/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">对撞指针</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">排序</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">排序、算法基础</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By highPhone啊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html> 1.1em; color: #999">Markdown</a> <a href="/tags/String/" style="font-size: 1.1em; color: #999">String</a> <a href="/tags/jvm/" style="font-size: 1.5em; color: #99a9bf">jvm</a> <a href="/tags/leetcode/" style="font-size: 1.23em; color: #999ea6">leetcode</a> <a href="/tags/mysql/" style="font-size: 1.37em; color: #99a4b2">mysql</a> <a href="/tags/servlet/" style="font-size: 1.1em; color: #999">servlet</a> <a href="/tags/singleton/" style="font-size: 1.1em; color: #999">singleton</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">动态规划</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.23em; color: #999ea6">多线程</a> <a href="/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/" style="font-size: 1.1em; color: #999">对撞指针</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">排序</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">排序、算法基础</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By highPhone啊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
+  
+  
+
+  
+  
+  
+
+  
+<link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">highPhone Space</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">highPhone啊</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>冲就完事了</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2021/01/">一月 2021<span class="mdui-ripple sidebar_archives-count">8</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="mdui-ripple sidebar_archives-count">8</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础<span class="mdui-ripple sidebar_archives-count">9</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/%E6%BC%AB%E8%B0%88/">漫谈<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/%E7%AE%97%E6%B3%95/">算法<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-none-link" href="/tags/GC/" rel="tag">GC<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/JMM/" rel="tag">JMM<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/Java/" rel="tag">Java<span class="mdui-ripple sidebar_archives-none-count">4</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">Lambda表达式<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/Markdown/" rel="tag">Markdown<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/String/" rel="tag">String<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/jvm/" rel="tag">jvm<span class="mdui-ripple sidebar_archives-none-count">4</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/leetcode/" rel="tag">leetcode<span class="mdui-ripple sidebar_archives-none-count">2</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/mysql/" rel="tag">mysql<span class="mdui-ripple sidebar_archives-none-count">3</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/servlet/" rel="tag">servlet<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/singleton/" rel="tag">singleton<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程<span class="mdui-ripple sidebar_archives-none-count">2</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/" rel="tag">对撞指针<span class="mdui-ripple sidebar_archives-none-count">1</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序<span class="mdui-ripple sidebar_archives-none-count">2</span></a><a class="mdui-ripple sidebar_archives-none-link" href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="tag">算法基础<span class="mdui-ripple sidebar_archives-none-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a target="_blank" rel="noopener" href="https://github.com/LuHF9527" class="mdui-list-item mdui-ripple">Github</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">土川的自留地</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/cff6dd61.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-6.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">Java内存模型(Java Memory Mode)</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-01-29 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        
+      
+      <a href="/cff6dd61.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/JMM/" rel="tag">JMM</a><a class="mdui-ripple article_tags-none-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/8cd769c.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-2.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">JVM内存回收策略</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-01-11 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        
+      
+      <a href="/8cd769c.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/GC/" rel="tag">GC</a><a class="mdui-ripple article_tags-none-link" href="/tags/jvm/" rel="tag">jvm</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/9a65291d.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-15.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">Java堆及虚拟机栈</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-01-10 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        
+      
+      <a href="/9a65291d.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/jvm/" rel="tag">jvm</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/3d2798f3.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-16.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">java类加载机制及类加载器</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-01-06 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        类加载过程
+      
+      <a href="/3d2798f3.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/jvm/" rel="tag">jvm</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/241f90c5.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-9.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">多线程基础(一)</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-19 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        线程简介
+      
+      <a href="/241f90c5.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/Java/" rel="tag">Java</a><a class="mdui-ripple article_tags-none-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/bbcf5ff7.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-2.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">Lambda表达式</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-19 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        
+lambda表达式是JDK1.8的新特性之一，使用lambda表达式可以缩减大量的匿名内部类的使用，避免了大量重复冗余的编...
+      
+      <a href="/bbcf5ff7.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/Java/" rel="tag">Java</a><a class="mdui-ripple article_tags-none-link" href="/tags/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">Lambda表达式</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/3e83b217.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-3.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">JVM内存模型</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-07 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        
+JVM1.6内存模型如下：
+
+
+      
+      <a href="/3e83b217.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/jvm/" rel="tag">jvm</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/f7fe0af2.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-12.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">基本数据类型</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-11-25 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        
+      
+      <a href="/f7fe0af2.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/Java/" rel="tag">Java</a>
+      
+    </footer>
+  </article>
+
+  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+    <a href="/c570fbf2.html">
+      <header class="mdui-card-media mdui-ripple">
+        <img src="/images/random/material-9.png" style="max-height: 240px;">
+        <div class="mdui-card-media-covered">
+          <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">JAVA基础-String、StringBuffer、StringBuilder</div>
+            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-11-17 / <i class="iconfont">&#xe601;</i> highPhone啊</div>
+          </div>
+        </div>
+      </header>
+    </a>
+    <div class="mdui-card-content mdui-typo">
+      
+        折腾了这么久，终于把这个博客搭起来，作为第一篇文章，就挑了基础的爪哇字符串来写了。博客搭建过程多得土川大佬的指导，非常感谢！...
+      
+      <a href="/c570fbf2.html">阅读更多 >></a>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+      
+      
+        <a class="mdui-ripple article_tags-none-link" href="/tags/Java/" rel="tag">Java</a><a class="mdui-ripple article_tags-none-link" href="/tags/String/" rel="tag">String</a>
+      
+    </footer>
+  </article>
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2020 - 2021 highPhone啊<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  
+<script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
