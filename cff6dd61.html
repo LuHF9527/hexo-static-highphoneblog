@@ -19,15 +19,15 @@
 <meta property="og:site_name" content="highPhone Space">
 <meta property="og:description" content="CPU Cache模型在学习JMM之前，我们先来了解下CPU Cache模型。在计算机中，所有的运算都由CPU来完成，而CPU计算需要从计算机主存(RAM)去读取数据，但是，我们都知道CPU的运算和读写速度很快，而主内存的读写速度要远远低于CPU，如果CPU要直接读取RAM，必将会大大降低CPU的速度和性能，于是就有了在CPU和主存之间增加了一层CPU Cache的设计。现在，CPU Cache分">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://highphone.xyz/images/2021-01-30-22-10-35.png">
-<meta property="og:image" content="https://highphone.xyz/images/2021-01-31-11-36-24.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2021-01-30-22-10-35.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2021-01-31-11-36-24.png">
 <meta property="article:published_time" content="2021-01-28T16:08:56.000Z">
-<meta property="article:modified_time" content="2021-02-03T12:42:58.935Z">
+<meta property="article:modified_time" content="2021-02-06T12:28:00.982Z">
 <meta property="article:author" content="highPhone啊">
 <meta property="article:tag" content="JMM">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://highphone.xyz/images/2021-01-30-22-10-35.png">
+<meta name="twitter:image" content="https://highphone.xyz/articles/images/2021-01-30-22-10-35.png">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -45,7 +45,7 @@
 
   
     <meta property="article:published_time" content="Fri Jan 29 2021 00:08:56 GMT+0800">
-    <meta property="article:modified_time" content="Wed Feb 03 2021 20:42:58 GMT+0800">
+    <meta property="article:modified_time" content="Sat Feb 06 2021 20:28:00 GMT+0800">
   
 
   
@@ -158,7 +158,7 @@
         
           <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">土川的自留地</a>
         
-          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">是老嫖客啊</a>
+          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">是老茶客啊</a>
         
         
       </div>
@@ -172,7 +172,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-10.png" style="max-height: 240px;">
+      <img src="/images/random/material-6.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Java内存模型(Java Memory Mode)</div>
@@ -223,7 +223,7 @@
     </header>
     <div class="mdui-card-content mdui-typo">
       <h2 id="CPU-Cache模型"><a href="#CPU-Cache模型" class="headerlink" title="CPU Cache模型"></a>CPU Cache模型</h2><p>在学习JMM之前，我们先来了解下CPU Cache模型。在计算机中，所有的运算都由CPU来完成，而CPU计算需要从计算机主存(RAM)去读取数据，但是，我们都知道CPU的运算和读写速度很快，而主内存的读写速度要远远低于CPU，如果CPU要直接读取RAM，必将会大大降低CPU的速度和性能，于是就有了在CPU和主存之间增加了一层CPU Cache的设计。现在，CPU Cache分为三级，最靠近CPU的缓存叫做L1，然后一次是L2，L3和主内存，由于程序指令和程序数据的行为和热点分布差异很大，因此，L1缓存又被划分成了L1i(i是instuction的首字母)和L1d(d是data的首字母)这两种有各自专门用途的缓存。CPU缓存模型如下图所示: </p>
-<p><img src="../images/2021-01-30-22-10-35.png"> </p>
+<p><img src="../articles/images/2021-01-30-22-10-35.png"> </p>
 <p>Cache 缓存模型是为了解决CPU直接访问内效率低下问题的，其工作原理如下：程序在运行过程中，会将运算所需要数据从主存复制一份到CPU Cache中，这样CPU计算的时候就可以直接对CPU Cache中的数据进行读取和写入，当运算结束之后，再将CPU Cache中的最新数据刷新到主内存中。CPU 通过访问CPU Cache的方式，大大提高了CPU的效率。</p>
 <h2 id="CPU缓存一致性问题"><a href="#CPU缓存一致性问题" class="headerlink" title="CPU缓存一致性问题"></a>CPU缓存一致性问题</h2><p>引入CPU Cache来解决CPU直接读取主内存效率低下的问题，同时也会带来了CPU缓存不一致的问题。例如对于某个变量i的自增操作i++，具体过程如下：</p>
 <ol>
@@ -246,7 +246,7 @@
 <li>每个线程都有各自的工作内存(也叫本地内存)</li>
 <li>线程工作内存内只存储共享变量的副本</li>
 <li>线程不能直接操作主内存，必须先操作工作内存后由工作内存写入主存</li>
-<li>工作内存是抽象概念，其实并不存在，它涵盖了缓存、寄存器、编译器优化和硬件等。<br>Java内存模型如下图：<br><img src="../images/2021-01-31-11-36-24.png"></li>
+<li>工作内存是抽象概念，其实并不存在，它涵盖了缓存、寄存器、编译器优化和硬件等。<br>Java内存模型如下图：<br><img src="../articles/images/2021-01-31-11-36-24.png"></li>
 </ol>
 <h2 id="JMM与并发编程三大特性"><a href="#JMM与并发编程三大特性" class="headerlink" title="JMM与并发编程三大特性"></a>JMM与并发编程三大特性</h2><h3 id="JMM与原子性"><a href="#JMM与原子性" class="headerlink" title="JMM与原子性"></a>JMM与原子性</h3><ul>
 <li><strong>原子性</strong>是指在一次或者多次操作中，要么所有的操作全部都得到了执行并且不会收到任何因素的干扰而中断，要么所有的操作都不执行，即<strong>要么都成功，要么都失败</strong>。最经典的例子就是银行转账业务。</li>

@@ -19,16 +19,16 @@
 <meta property="og:site_name" content="highPhone Space">
 <meta property="og:description" content="线程简介进程: 　　    应用程序的执行实例,有独立内存空间和系统资源 线程: 　　    cpu调度和分派的基本单位,进程中执行运算最小的单位,可完成一个独立顺序控制流程 多线程: 　　 在一个进程中同时运行了多个线程,完成不同的工作     多个线程交替占用cpu资源,而非真正并行执行     好处: 　　　　充分利用cpu资源 　　　　简化编程模型 　　　　带来良好用户体验 创建线程的三种">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://highphone.xyz/images/2020-12-20-01-46-28.png">
-<meta property="og:image" content="https://highphone.xyz/images/2020-12-20-13-48-22.png">
-<meta property="og:image" content="https://highphone.xyz/images/2020-12-20-14-16-48.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2020-12-20-01-46-28.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2020-12-20-13-48-22.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2020-12-20-14-16-48.png">
 <meta property="article:published_time" content="2020-12-19T14:27:06.000Z">
-<meta property="article:modified_time" content="2021-02-03T12:29:36.104Z">
+<meta property="article:modified_time" content="2021-02-06T12:28:00.778Z">
 <meta property="article:author" content="highPhone啊">
 <meta property="article:tag" content="多线程">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://highphone.xyz/images/2020-12-20-01-46-28.png">
+<meta name="twitter:image" content="https://highphone.xyz/articles/images/2020-12-20-01-46-28.png">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -46,7 +46,7 @@
 
   
     <meta property="article:published_time" content="Sat Dec 19 2020 22:27:06 GMT+0800">
-    <meta property="article:modified_time" content="Wed Feb 03 2021 20:29:36 GMT+0800">
+    <meta property="article:modified_time" content="Sat Feb 06 2021 20:28:00 GMT+0800">
   
 
   
@@ -159,7 +159,7 @@
         
           <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">土川的自留地</a>
         
-          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">是老嫖客啊</a>
+          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">是老茶客啊</a>
         
         
       </div>
@@ -173,7 +173,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-16.png" style="max-height: 240px;">
+      <img src="/images/random/material-6.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">多线程基础(一)</div>
@@ -241,7 +241,7 @@
 3. 创建自定义线程对象，调用start()方法启动线程
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadTest1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ThreadTest1 thread1 = <span class="keyword">new</span> ThreadTest1(<span class="string">&quot;线程一&quot;</span>);</span><br><span class="line">        ThreadTest1 thread2 = <span class="keyword">new</span> ThreadTest1(<span class="string">&quot;线程二&quot;</span>);</span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ThreadTest1</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;<span class="comment">//线程每秒打印i,从1到10</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot;正在打印：&quot;</span> + i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre>
-<p><img src="../images/2020-12-20-01-46-28.png"></p>
+<p><img src="../articles/images/2020-12-20-01-46-28.png"></p>
 <h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><pre><code>1. 编写自己的线程类，使用implements关键字实现Runnable接口
 
 2. 重写Runnable接口的run方法，自定义线程工作内容
@@ -258,7 +258,7 @@
 </li>
 <li><p>创建ExecutorService,通过sumbit()启动线程，submit()返回方法体返回值类型一致的Future<V>,可以获得线程执行完的返回值。</V></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadTest4</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">Boolean</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService service = Executors.newSingleThreadExecutor();</span><br><span class="line">        Future&lt;Boolean&gt; future = service.submit(<span class="keyword">new</span> ThreadTest4());</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Boolean callResult = future.get();</span><br><span class="line">            System.out.println(<span class="string">&quot;线程执行结果返回是&quot;</span> + callResult);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123;</span><br><span class="line">            service.shutdown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot;正在打印&quot;</span> + i);</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="../images/2020-12-20-13-48-22.png"></p>
+<p><img src="../articles/images/2020-12-20-13-48-22.png"></p>
 <blockquote>
 <p>虽然是实现 Callable ，但是在 Executor 实际运行时，会将 Runnable 的实例或 Callable 的实例转化为 RunnableFuture 的实例，而 RunnableFuture 继承了 Runnable 和 Future 接口。另外，相比实现Runnable接口，实现Callable接口有以下优点:</p>
 </blockquote>
@@ -270,7 +270,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="线程状态及Thread常用方法"><a href="#线程状态及Thread常用方法" class="headerlink" title="线程状态及Thread常用方法"></a>线程状态及Thread常用方法</h2><h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><p><img src="../images/2020-12-20-14-16-48.png"></p>
+<h2 id="线程状态及Thread常用方法"><a href="#线程状态及Thread常用方法" class="headerlink" title="线程状态及Thread常用方法"></a>线程状态及Thread常用方法</h2><h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><p><img src="../articles/images/2020-12-20-14-16-48.png"></p>
 <ul>
 <li>新生状态状态(new)<br>  Thread t = new Thread(),线程对象一旦创建就进入到新生状态</li>
 <li>就绪状态(Runnable)<br>  可执行状态，当调用start()方法启动线程后，线程进入就绪状态，可以被CPU调度执行，但不意味着会立即调度</li>

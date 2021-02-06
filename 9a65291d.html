@@ -19,15 +19,15 @@
 <meta property="og:site_name" content="highPhone Space">
 <meta property="og:description" content="基于Hotspot虚拟机的堆栈学习笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://highphone.xyz/images/!%5B%5D(../images/2021-01-10-15-02-22.png).png">
-<meta property="og:image" content="https://highphone.xyz/images/2021-01-10-21-52-20.png">
-<meta property="og:image" content="https://highphone.xyz/images/2021-01-10-21-52-50.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2021-01-10-15-02-22.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2021-01-10-21-52-20.png">
+<meta property="og:image" content="https://highphone.xyz/articles/images/2021-01-10-21-52-50.png">
 <meta property="article:published_time" content="2021-01-10T06:10:18.000Z">
-<meta property="article:modified_time" content="2021-02-03T12:42:19.540Z">
+<meta property="article:modified_time" content="2021-02-06T12:28:00.982Z">
 <meta property="article:author" content="highPhone啊">
 <meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://highphone.xyz/images/!%5B%5D(../images/2021-01-10-15-02-22.png).png">
+<meta name="twitter:image" content="https://highphone.xyz/articles/images/2021-01-10-15-02-22.png">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -45,7 +45,7 @@
 
   
     <meta property="article:published_time" content="Sun Jan 10 2021 14:10:18 GMT+0800">
-    <meta property="article:modified_time" content="Wed Feb 03 2021 20:42:19 GMT+0800">
+    <meta property="article:modified_time" content="Sat Feb 06 2021 20:28:00 GMT+0800">
   
 
   
@@ -158,7 +158,7 @@
         
           <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">土川的自留地</a>
         
-          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">是老嫖客啊</a>
+          <a href="" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">是老茶客啊</a>
         
         
       </div>
@@ -172,7 +172,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-9.png" style="max-height: 240px;">
+      <img src="/images/random/material-16.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Java堆及虚拟机栈</div>
@@ -222,7 +222,7 @@
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <h2 id="Java虚拟机栈-Java-Vitual-Mechine-Stack"><a href="#Java虚拟机栈-Java-Vitual-Mechine-Stack" class="headerlink" title="Java虚拟机栈(Java Vitual Mechine Stack)"></a>Java虚拟机栈(Java Vitual Mechine Stack)</h2><p>在之前的<a href="/3e83b217.html">JVM内存模型</a>一文已经对java虚拟机栈又一个初步的概述了，现在我们再来看看关于栈帧的一些相关内容。<br>我们知道，栈是线程私有的，每个方法被调用时会在当前线程栈内存中创建一个栈帧，如下图：<br><img src="../images/!%5B%5D(../images/2021-01-10-15-02-22.png).png">  </p>
+      <h2 id="Java虚拟机栈-Java-Vitual-Mechine-Stack"><a href="#Java虚拟机栈-Java-Vitual-Mechine-Stack" class="headerlink" title="Java虚拟机栈(Java Vitual Mechine Stack)"></a>Java虚拟机栈(Java Vitual Mechine Stack)</h2><p>在之前的<a href="/3e83b217.html">JVM内存模型</a>一文已经对java虚拟机栈又一个初步的概述了，现在我们再来看看关于栈帧的一些相关内容。<br>我们知道，栈是线程私有的，每个方法被调用时会在当前线程栈内存中创建一个栈帧，如下图：<br><img src="../articles/images/2021-01-10-15-02-22.png">  </p>
 <h3 id="栈帧-Stack-Frame"><a href="#栈帧-Stack-Frame" class="headerlink" title="栈帧(Stack Frame)"></a>栈帧(Stack Frame)</h3><ul>
 <li>栈帧（Stack Frame）是用于支持虚拟机进行方法调用和方法执行的数据结构,它是虚拟机运行时数据区中的java虚拟机栈的栈元素。  </li>
 <li>栈帧存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。  </li>
@@ -251,8 +251,8 @@
 </ol>
 <h2 id="Java堆-Java-Heap"><a href="#Java堆-Java-Heap" class="headerlink" title="Java堆(Java Heap)"></a>Java堆(Java Heap)</h2><p>JVM中只有一个堆，供所有线程共享，java堆可以细分为年轻代(Young Generation)、老年代(Old Generation)和永久代(permanent Generation)，其中新生代又分为伊甸园区(Eden Space)、幸存0区(Survivor0 Space)、幸存1区(Survivor1 Space)。永久代是JDK1.7以前，对JVM方法区的实现，在《深入理解JVM》一书中有如下描述: 虽然Java虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做Non-Heap(非堆)，目的应该是与Java堆区分开来。在JDK1.8以后，移除了永久代，改用元空间(Meta Space)来实现方法区，元空间放在直接内存中。  </p>
 <ul>
-<li>JDK1.7堆内存结构图<br><img src="../images/2021-01-10-21-52-20.png"></li>
-<li>JDK1.8 堆内存结构图<br><img src="../images/2021-01-10-21-52-50.png"></li>
+<li>JDK1.7堆内存结构图<br><img src="../articles/images/2021-01-10-21-52-20.png"></li>
+<li>JDK1.8 堆内存结构图<br><img src="../articles/images/2021-01-10-21-52-50.png"></li>
 </ul>
 <h3 id="年轻代-Young-Generation"><a href="#年轻代-Young-Generation" class="headerlink" title="年轻代(Young Generation)"></a>年轻代(Young Generation)</h3><blockquote>
 <p>在整个Java Heap中，年轻代所占用内存大小的比例是1/3  </p>
