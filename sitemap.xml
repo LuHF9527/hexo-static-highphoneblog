@@ -58,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://highphone.xyz/c570fbf2.html</loc>
+    <loc>https://highphone.xyz/e303343.html</loc>
     
     <lastmod>2021-02-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://highphone.xyz/e303343.html</loc>
+    <loc>https://highphone.xyz/c570fbf2.html</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://highphone.xyz/29fb013c.html</loc>
+    <loc>https://highphone.xyz/a25ed364.html</loc>
     
     <lastmod>2021-02-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://highphone.xyz/a25ed364.html</loc>
+    <loc>https://highphone.xyz/29fb013c.html</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -200,6 +200,13 @@
   </url>
   
   <url>
+    <loc>https://highphone.xyz/tags/servlet/</loc>
+    <lastmod>2021-04-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://highphone.xyz/tags/Markdown/</loc>
     <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
@@ -215,13 +222,6 @@
   
   <url>
     <loc>https://highphone.xyz/tags/Java/</loc>
-    <lastmod>2021-04-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://highphone.xyz/tags/servlet/</loc>
     <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -277,14 +277,14 @@
   </url>
   
   <url>
-    <loc>https://highphone.xyz/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://highphone.xyz/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/</loc>
     <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://highphone.xyz/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/</loc>
+    <loc>https://highphone.xyz/tags/%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -314,14 +314,14 @@
   </url>
   
   <url>
-    <loc>https://highphone.xyz/categories/%E6%BC%AB%E8%B0%88/</loc>
+    <loc>https://highphone.xyz/categories/JavaWeb/</loc>
     <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://highphone.xyz/categories/JavaWeb/</loc>
+    <loc>https://highphone.xyz/categories/%E6%BC%AB%E8%B0%88/</loc>
     <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
